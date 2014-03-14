@@ -1,0 +1,12 @@
+blib
+_build
+Build
+MANIFEST.*
+META.*
+.sw?
+*.sw?
+*.tar.gz
+MYMETA.*
+README
+lib/Log/Journald.c
+lib/Log/Journald.o
