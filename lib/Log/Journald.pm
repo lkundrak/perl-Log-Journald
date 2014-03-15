@@ -89,7 +89,7 @@ macros.
  
 =item *
 
-L<sd-journal(3)> - Description of C language API for journal.
+L<sd-journal(3)> -- Description of C language API for journal.
 
 =item *
 
