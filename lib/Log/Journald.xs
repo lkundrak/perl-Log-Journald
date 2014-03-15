@@ -143,7 +143,7 @@ send(key, value, ...)
 	OUTPUT:
 		RETVAL
 
-/* Raw log sending function. Sends its arguments as they are. */
+# Raw log sending function. Sends its arguments as they are.
 int
 sendv(arg, ...)
 	CODE:
