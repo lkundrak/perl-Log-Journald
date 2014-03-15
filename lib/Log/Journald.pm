@@ -31,7 +31,9 @@ possible to easily use L<systemd-journald.service(8)>'s structured logging
 capabilities and includes location of the logging point in the source code in 
 the messages.
 
-Backend for L<Log::Dispatch> exist: Use L<Log::Dispatch::Journald>.
+Backends for L<Log::Dispatch> and L<Log::Log4perl> exist: Use
+L<Log::Dispatch::Journald> and L<Log::Log4perl::Appender::Journald>
+respectively.
 
 =cut
 
@@ -100,6 +102,10 @@ L<systemd-journald.service(8)> -- Manual of the journal service.
 =item *
 
 L<Log::Dispatch::Journald> -- L<Log::Dispatch> backend.
+
+=item *
+
+L<Log::Log4perl::Appender::Journald> -- L<Log::Log4perl> appender.
 
 =back
 
