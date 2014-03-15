@@ -3,6 +3,7 @@ MANIFEST		This file
 t/Log-Journald.t	A test
 lib/Log/Journald.pm	Perl wrapper and documentation
 lib/Log/Journald.xs	Bindings to C language library
+lib/Log/Dispatch/Journald.pm	Log::Dispatch backend
 META.yml
 META.json
 README

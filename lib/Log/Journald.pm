@@ -31,6 +31,8 @@ possible to easily use L<systemd-journald.service(8)>'s structured logging
 capabilities and includes location of the logging point in the source code in 
 the messages.
 
+Backend for L<Log::Dispatch> exist: Use L<Log::Dispatch::Journald>.
+
 =cut
 
 package Log::Journald;
@@ -94,6 +96,10 @@ L<sd-journal(3)> -- Description of C language API for journal.
 =item *
 
 L<systemd-journald.service(8)> -- Manual of the journal service.
+
+=item *
+
+L<Log::Dispatch::Journald> -- L<Log::Dispatch> backend.
 
 =back
 
