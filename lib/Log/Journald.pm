@@ -8,7 +8,7 @@ Log::Journald - Send messages to a systemd journal
   use Sys::Syslog qw/:macros/;
 
   # Easy.
-  journald_log(LOG_INFO, "Hello from PID $$!");
+  journal_log(LOG_INFO, "Hello from PID $$!");
 
   # Send arbitrary fields, even binary data
   Log::Journald::send(PRIORITY => LOG_INFO,
