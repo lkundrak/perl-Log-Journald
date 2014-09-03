@@ -8,13 +8,13 @@ Log::Journald - Send messages to a systemd journal
   use Sys::Syslog qw/:macros/;
 
   # Easy.
-  journald_log(LOG_INFO, "Hello from PID $$!");
+  journal_log(LOG_INFO, "Hello from PID $$!");
 
   # Send arbitrary fields, even binary data
   Log::Journald::send(PRIORITY => LOG_INFO,
        MESSAGE => "Hello from PID $$!",
        PERL_PACKAGE => __PACKAGE__,
-       _YOLO => "SW\x00AG");
+       _YOLO => "SW\x00AG")
        or warn "Could not send log: $!";
 
   # Raw
@@ -99,7 +99,7 @@ L<systemd-journald.service(8)> -- Manual of the journal service.
 
 =head1 BUGS
 
-C<journal_log()> terminates the message at a NUL byte. You need to use another
+C<journal_log()> terminates the message at a NULL byte. You need to use another
 interface to log binary data.
 
 To get priority constants, you still need to include L<Sys::Syslog>.
