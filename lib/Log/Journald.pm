@@ -14,7 +14,7 @@ Log::Journald - Send messages to a systemd journal
   Log::Journald::send(PRIORITY => LOG_INFO,
        MESSAGE => "Hello from PID $$!",
        PERL_PACKAGE => __PACKAGE__,
-       _YOLO => "SW\x00AG");
+       _YOLO => "SW\x00AG")
        or warn "Could not send log: $!";
 
   # Raw
