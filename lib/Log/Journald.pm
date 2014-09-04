@@ -111,7 +111,7 @@ L<Log::Log4perl::Appender::Journald> -- L<Log::Log4perl> appender.
 
 =head1 BUGS
 
-C<journal_log()> terminates the message at a NUL byte. You need to use another
+C<journal_log()> terminates the message at a NULL byte. You need to use another
 interface to log binary data.
 
 To get priority constants, you still need to include L<Sys::Syslog>.
