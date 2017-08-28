@@ -3,9 +3,17 @@ use warnings;
 
 use Module::Build;
 
-my $libsystemd_journal_CFLAGS = `pkg-config --cflags libsystemd-journal`
+my @libpaths = qw(libsystemd-journal libsystemd); # recently system is libsystemd but some platform has both paths.
+my $libpath  = '';
+
+for my $path ( @libpaths ) {
+	next unless `pkg-config --exists $path && echo 1`;
+	$libpath = $path;
+}
+
+my $libsystemd_journal_CFLAGS = `pkg-config --cflags $libpath`
 	or warn 'Could not determine systemd-journal compiler flags';
-my $libsystemd_journal_LDFLAGS = `pkg-config --libs libsystemd-journal`
+my $libsystemd_journal_LDFLAGS = `pkg-config --libs $libpath`
 	or warn 'Could not determine systemd-journal compiler flags';
 
 my $build = Module::Build->new(
