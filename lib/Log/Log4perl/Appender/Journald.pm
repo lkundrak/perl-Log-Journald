@@ -45,6 +45,7 @@ our @ISA = qw/Log::Log4perl::Appender/;
 use warnings;
 use strict;
 
+use Log::Log4perl;
 use Log::Journald;
 use Log::Log4perl::MDC;
 
@@ -73,6 +74,11 @@ sub log
 
 	# Turn syslog level into journald priority
 	$log{PRIORITY} = 7 - delete $log{LEVEL};
+
+	# add the original line/file to the journal item
+	my ($package, $file, $line) = caller( $Log::Log4perl::caller_depth + 3 );
+	$log{LOG4P_LINE} = $line;
+	$log{LOG4P_FILE} = $file;
 
 	Log::Journald::send (%log) or warn $!;
 }
